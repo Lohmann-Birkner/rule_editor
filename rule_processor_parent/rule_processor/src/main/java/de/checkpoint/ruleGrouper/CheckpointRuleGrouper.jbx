@@ -1,0 +1,65 @@
+[PropertyInfo]
+actualCaseFromFormerCase,int,false,false, , ,true,<vorgabe>
+ALL_RULES_INDEX,int,false,false, , ,false,<vorgabe>
+ALL_USED_INDEX,int,false,false, , ,false,<vorgabe>
+BASIC_YEAR,int,false,false, , ,false,<vorgabe>
+calc,java.util.Calendar,false,false, , ,false,<vorgabe>
+codeRefDdx,String[],false,false, , ,true,<vorgabe>
+codeReferencesForRule,String[],false,false, , ,true,<vorgabe>
+codeRefFee,String[],false,false, , ,true,<vorgabe>
+codeRefPdx,String[],false,false, , ,true,<vorgabe>
+codeRefSdx,String[],false,false, , ,true,<vorgabe>
+codeRefSrg,String[],false,false, , ,true,<vorgabe>
+diagnoseCursorID,int,false,false, , ,false,<vorgabe>
+durchlauf,int,false,false, , ,false,<vorgabe>
+FOR_2000_INDEX,int,false,false, , ,false,<vorgabe>
+formerAkt,int,false,false, , ,true,<vorgabe>
+formerCount,int,false,false, , ,true,<vorgabe>
+formerInout,de.checkpoint.ruleGrouper.CRGInputOutput[],false,false, , ,true,<vorgabe>
+formerInout_Inout,de.checkpoint.drg.RulerInputObject[],false,false, , ,true,<vorgabe>
+formerInputoutput,de.checkpoint.ruleGrouper.CRGInputOutput[],false,false, , ,true,<vorgabe>
+formerSort,int[],false,false, , ,true,<vorgabe>
+grouperModel,int,false,false, , ,true,<vorgabe>
+grouperModel,de.checkpoint.server.data.DatDrgModel,false,false, , ,true,<vorgabe>
+inout,de.checkpoint.ruleGrouper.CRGInputOutput,false,false, , ,true,<vorgabe>
+m_allRulesWithYears,de.checkpoint.ruleGrouper.CRGRule[][],false,false, , ,false,<vorgabe>
+m_allRulesWithYearsSize,int[],false,false, , ,false,<vorgabe>
+m_diagCaseID,long,false,false, , ,false,<vorgabe>
+m_formerAkt,int,false,false, , ,false,<vorgabe>
+m_formerCount,int,false,false, , ,false,<vorgabe>
+m_formerInOuts,de.checkpoint.ruleGrouper.CRGInputOutput[],false,false, , ,false,<vorgabe>
+m_formerMax,int,false,false, , ,false,<vorgabe>
+m_formerSort,int[],false,false, , ,false,<vorgabe>
+m_grouper,de.checkpoint.drg.GrouperInterface,false,false, , ,false,<vorgabe>
+m_hasRuleInterval,boolean,false,false, , ,false,<vorgabe>
+m_inout,de.checkpoint.ruleGrouper.CRGInputOutput,false,false, , ,false,<vorgabe>
+m_inoutSugg,de.checkpoint.ruleGrouper.CRGInputOutput,false,false, , ,false,<vorgabe>
+m_isCrossCase,boolean,false,false, , ,false,<vorgabe>
+m_isGK,boolean,false,false, , ,false,<vorgabe>
+m_mgrMRSA,de.checkpoint.server.morbiRSA.MrsaManager,false,false, , ,false,<vorgabe>
+m_RefEle,de.checkpoint.ruleGrouper.CRGRefElement[],false,false, , ,false,<vorgabe>
+m_RefIndex,int[],false,false, , ,false,<vorgabe>
+m_RefIndex1,int[],false,false, , ,false,<vorgabe>
+m_RefIndex2,int[],false,false, , ,false,<vorgabe>
+m_RefRule,int,false,false, , ,false,<vorgabe>
+m_RefWert,String[],false,false, , ,false,<vorgabe>
+m_RefZaehler,int,false,false, , ,false,<vorgabe>
+m_ruleIntervalEnd,long,false,false, , ,false,<vorgabe>
+m_ruleIntervalStart,long,false,false, , ,false,<vorgabe>
+m_rules,de.checkpoint.ruleGrouper.CRGRule[],false,false, , ,false,<vorgabe>
+m_ruleSize,int,false,false, , ,false,<vorgabe>
+m_setCheckDateFromAdmDate,boolean,false,false, , ,false,<vorgabe>
+m_state,int,false,false, , ,false,<vorgabe>
+m_suggFeeCalculator,de.checkpoint.eska.ESKAFeeSuggCalculator,false,false, , ,false,<vorgabe>
+m_tmpFormerAkt,int,false,false, , ,false,<vorgabe>
+m_tmpFormerCount,int,false,false, , ,false,<vorgabe>
+m_tmpFormerInOuts,de.checkpoint.ruleGrouper.CRGInputOutput[],false,false, , ,false,<vorgabe>
+m_usedGrouperID,int,false,false, , ,false,<vorgabe>
+MRSAManager,de.checkpoint.server.morbiRSA.MrsaManager,false,false, , ,true,<vorgabe>
+suggInout,de.checkpoint.ruleGrouper.CRGInputOutput,false,false, , ,true,<vorgabe>
+usedGrouperID,int,false,false, , ,true,<vorgabe>
+[IconNames]
+
+
+
+

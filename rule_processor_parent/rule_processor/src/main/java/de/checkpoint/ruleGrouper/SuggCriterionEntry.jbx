@@ -1,0 +1,8 @@
+[PropertyInfo]
+m_critsToAffect,de.checkpoint.ruleGrouper.CriterionDepend[],false,false, , ,false,<vorgabe>
+noOperation,boolean,false,false, , ,true,<vorgabe>
+[IconNames]
+
+
+
+

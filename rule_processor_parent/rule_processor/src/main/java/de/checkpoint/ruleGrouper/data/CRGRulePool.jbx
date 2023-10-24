@@ -1,0 +1,14 @@
+[PropertyInfo]
+crgpl_active,boolean,false,false, , ,false,<vorgabe>
+crgpl_active_dtm,java.sql.Date,false,false, , ,false,<vorgabe>
+crgpl_deactive_dtm,java.sql.Date,false,false, , ,false,<vorgabe>
+crgpl_identifier,String,false,false, , ,false,<vorgabe>
+crgpl_user_id,long,false,false, , ,false,<vorgabe>
+crgpl_year,int,false,false, , ,false,<vorgabe>
+m_right,de.checkpoint.ruleGrouper.data.CRGPoolRight,false,false, , ,false,<vorgabe>
+poolRight,de.checkpoint.ruleGrouper.data.CRGPoolRight,false,false, , ,true,<vorgabe>
+[IconNames]
+
+
+
+

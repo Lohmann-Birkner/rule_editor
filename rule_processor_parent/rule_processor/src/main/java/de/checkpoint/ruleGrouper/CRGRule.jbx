@@ -1,0 +1,55 @@
+[PropertyInfo]
+CPRule,boolean,false,false, , ,true,<vorgabe>
+GKRule,boolean,false,false, , ,true,<vorgabe>
+isTest,boolean,false,false, , ,false,<vorgabe>
+m_checkDate,java.util.Date,false,false, , ,false,<vorgabe>
+m_errorType,de.checkpoint.ruleGrouper.data.CRGRuleTypes,false,false, , ,false,<vorgabe>
+m_fullRuleAnalysis,int,false,false, , ,false,<vorgabe>
+m_hasACGCrit,boolean,false,false, , ,false,<vorgabe>
+m_hasAMBUMedCrit,boolean,false,false, , ,false,<vorgabe>
+m_hasAMBUSoLeCrit,boolean,false,false, , ,true,<vorgabe>
+m_hasCPCrit,boolean,false,false, , ,false,<vorgabe>
+m_hasCPMedCrit,boolean,false,false, , ,true,<vorgabe>
+m_hasGKRsaCrit,boolean,false,false, , ,false,<vorgabe>
+m_hasInsCrit,boolean,false,false, , ,false,<vorgabe>
+m_hasKHCrit,boolean,false,false, , ,false,<vorgabe>
+m_hasRSACrit,boolean,false,false, , ,false,<vorgabe>
+m_isCheckpoint,boolean,false,false, , ,false,<vorgabe>
+m_poolIdent,String,false,false, , ,false,<vorgabe>
+m_ruleElement,de.checkpoint.ruleGrouper.CRGRuleElement,false,false, , ,false,<vorgabe>
+m_ruleIdentififier,String,false,false, , ,false,<vorgabe>
+m_rulesInterval,de.checkpoint.ruleGrouper.CRGIntervalEntry,false,false, , ,false,<vorgabe>
+m_simpleDateFormat,java.text.SimpleDateFormat,false,false, , ,false,<vorgabe>
+m_simpleTimeFormat,java.text.SimpleDateFormat,false,false, , ,false,<vorgabe>
+m_suggestionLength,int,false,false, , ,false,<vorgabe>
+m_suggestions,de.checkpoint.ruleGrouper.CRGSuggestion[],false,false, , ,false,<vorgabe>
+m_types,java.util.List,false,false, , ,false,<vorgabe>
+m_ueMessages,java.util.Vector,false,false, , ,false,<vorgabe>
+poolIdent,String,false,false, , ,true,<vorgabe>
+RSARule,boolean,false,false, , ,true,<vorgabe>
+ruleActiveState,boolean,false,false, , ,true,<vorgabe>
+ruleDescription,String,false,false, , ,true,<vorgabe>
+ruleDescrType,de.checkpoint.ruleGrouper.data.CRGRuleTypes,false,false, , ,true,<vorgabe>
+ruleDescrTypeID,int,false,false, , ,true,<vorgabe>
+ruleDescType,de.checkpoint.ruleGrouper.data.CRGRuleTypes,false,false, , ,true,<vorgabe>
+ruleElement,de.checkpoint.ruleGrouper.CRGRuleElement,false,false, , ,true,<vorgabe>
+ruleFeeState,boolean,false,false, , ,true,<vorgabe>
+ruleID,String,false,false, , ,true,<vorgabe>
+ruleIdentifier,String,false,false, , ,true,<vorgabe>
+ruleInterval,de.checkpoint.ruleGrouper.CRGIntervalEntry,false,false, , ,true,<vorgabe>
+ruleNotice,String,false,false, , ,true,<vorgabe>
+ruleNumber,String,false,false, , ,true,<vorgabe>
+ruleShortDescription,String,false,false, , ,true,<vorgabe>
+ruleSuggestion,String,false,false, , ,true,<vorgabe>
+ruleValidFrom,java.util.Date,false,false, , ,true,<vorgabe>
+ruleValidTo,java.util.Date,false,false, , ,true,<vorgabe>
+ruleValues,de.checkpoint.ruleGrouper.CRGRule,false,false, , ,true,<vorgabe>
+ruleVisibleState,boolean,false,false, , ,true,<vorgabe>
+suggestionCount,int,false,false, , ,true,<vorgabe>
+suggestions,de.checkpoint.ruleGrouper.CRGSuggestion[],false,false, , ,true,<vorgabe>
+UEMessages,java.util.Vector,false,false, , ,true,<vorgabe>
+[IconNames]
+
+
+
+

@@ -1,0 +1,83 @@
+{
+  "criterien": {
+    "patient": [
+      {
+        "name": "first_name",
+        "type": "DATATYPE_STRING",
+        "description": "Vorname"
+      },
+      {
+        "name": "second_name",
+        "type": "DATATYPE_STRING",
+        "description": "Nachname"
+      },
+      {
+        "name": "title",
+        "type": "DATATYPE_STRING",
+        "description": "Titel"
+      },
+      {
+        "name": "birth_date",
+        "type": "DATATYPE_DATE",
+        "description": "Geburtsdatum"
+      },
+      {
+        "name": "zipcode",
+        "type": "DATATYPE_STRING",
+        "description": "Postleitzahl"
+      },
+      {
+        "name": "city",
+        "type": "DATATYPE_STRING",
+        "description": "Stadt"
+      },
+      {
+        "name": "address",
+        "type": "DATATYPE_STRING",
+        "description": "Adresse(Strasse, Nr)"
+      },
+      {
+        "name": "insurance_number",
+        "type": "DATATYPE_STRING",
+        "description": "Versicherungsnummer"
+      },
+      {
+        "name": "insurance_ik",
+        "type": "DATATYPE_STRING",
+        "description": "Versicherung"
+      }
+    ],
+    "case": [
+      {
+        "name": "case_number",
+        "type": "DATATYPE_STRING",
+        "description": "KH interne Fallnummer"
+      },
+      {
+        "name": "admission_date",
+        "type": "DATATYPE_DATE",
+        "description": "Aufnahmedatum"
+      },
+      {
+        "name": "admission_reason12",
+        "type": "DATATYPE_INTEGER",
+        "description": "Aufnahmegrund12"
+      },
+      {
+        "name": "admission_reason34",
+        "type": "DATATYPE_INTEGER",
+        "description": "Aufnahmegrund34"
+      },
+      {
+        "name": "department",
+        "type": "DATATYPE_STRING",
+        "description": "Abteilungsschlüssel"
+      },
+      {
+        "name": "ward",
+        "type": "DATATYPE_STRING",
+        "description": "Station"
+      }
+    ]
+  }
+}

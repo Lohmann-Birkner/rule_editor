@@ -1,0 +1,33 @@
+[PropertyInfo]
+critValues,Object[][],false,false, , ,true,<vorgabe>
+descriptionText,String,false,false, , ,true,<vorgabe>
+forAfterFeeValidation,boolean,false,false, , ,true,<vorgabe>
+inRules,boolean,false,false, , ,true,<vorgabe>
+inSuggs,boolean,false,false, , ,true,<vorgabe>
+m_depend,int,false,false, , ,false,<vorgabe>
+m_dependCritCheckIndex,int,false,false, , ,false,<vorgabe>
+m_dependGroupIndex,int,false,false, , ,false,<vorgabe>
+m_dependIndex,int,false,false, , ,false,<vorgabe>
+m_descriptionText,String,false,false, , ,false,<vorgabe>
+m_groupCPIndex,int,false,false, , ,false,<vorgabe>
+m_groupStructIndex,int,false,false, , ,false,<vorgabe>
+m_hastInterval,boolean,false,false, , ,false,<vorgabe>
+m_indCummulateBase,int,false,false, , ,false,<vorgabe>
+m_indCummulateDate,int,false,false, , ,false,<vorgabe>
+m_indCummulateNumber,int,false,false, , ,false,<vorgabe>
+m_indCummulateWhat,int,false,false, , ,false,<vorgabe>
+m_index,int,false,false, , ,false,<vorgabe>
+m_isCrossCase,boolean,false,false, , ,false,<vorgabe>
+m_isCummulative,boolean,false,false, , ,false,<vorgabe>
+m_isDepended,boolean,false,false, , ,false,<vorgabe>
+m_type,int,false,false, , ,false,<vorgabe>
+m_usedInSugg,int,false,false, , ,false,<vorgabe>
+noOperation,boolean,false,false, , ,true,<vorgabe>
+structGroupIndex,int,false,false, , ,true,<vorgabe>
+toolTipLen,int,false,false, , ,false,<vorgabe>
+type,int,false,false, , ,true,<vorgabe>
+[IconNames]
+
+
+
+

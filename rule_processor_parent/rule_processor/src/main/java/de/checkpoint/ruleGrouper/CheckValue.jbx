@@ -1,0 +1,52 @@
+[PropertyInfo]
+actualDouble,double,false,false, , ,true,<vorgabe>
+actualDoubleArray,double[],false,false, , ,true,<vorgabe>
+actualLong,long,false,false, , ,true,<vorgabe>
+actualLongArray,long[],false,false, , ,true,<vorgabe>
+actualLongTime,long,false,false, , ,true,<vorgabe>
+actualLongTimeArray,long[],false,false, , ,true,<vorgabe>
+actualString,String,false,false, , ,true,<vorgabe>
+actualStringArray,String[],false,false, , ,true,<vorgabe>
+actualType,int,false,false, , ,true,<vorgabe>
+arrayLength,int[],false,false, , ,true,<vorgabe>
+checkType,int[],false,false, , ,true,<vorgabe>
+checkValues,de.checkpoint.ruleGrouper.CheckValue,false,false, , ,true,<vorgabe>
+dependInex,int[],false,false, , ,false,<vorgabe>
+doubleArray,double[],false,false, , ,true,<vorgabe>
+doubleValue,double,false,false, , ,true,<vorgabe>
+firstOperand,int,false,false, , ,true,<vorgabe>
+isArray,boolean,false,false, , ,true,<vorgabe>
+isCompare,boolean,false,false, , ,true,<vorgabe>
+isCompute,boolean,false,false, , ,true,<vorgabe>
+isDepend,boolean,false,false, , ,false,<vorgabe>
+isIndexDepend,boolean,false,false, , ,false,<vorgabe>
+lastButOneOperand,int,false,false, , ,true,<vorgabe>
+lastButOneState,boolean,false,false, , ,false,<vorgabe>
+lastCompareState,int,false,false, , ,true,<vorgabe>
+lastDouble,double,false,false, , ,true,<vorgabe>
+lastDoubleArray,double[],false,false, , ,true,<vorgabe>
+lastLong,long,false,false, , ,true,<vorgabe>
+lastLongArray,long[],false,false, , ,true,<vorgabe>
+lastLongTime,long,false,false, , ,true,<vorgabe>
+lastLongTimeArray,long[],false,false, , ,true,<vorgabe>
+lastOperand,int,false,false, , ,true,<vorgabe>
+lastOperandIndex,int,false,false, , ,true,<vorgabe>
+lastState,boolean,false,false, , ,false,<vorgabe>
+lastString,String,false,false, , ,true,<vorgabe>
+lastStringArray,String[],false,false, , ,true,<vorgabe>
+lastType,int,false,false, , ,false,<vorgabe>
+longArray,long[],false,false, , ,true,<vorgabe>
+longTimeArray,long[],false,false, , ,true,<vorgabe>
+longtimeArray,long[],false,false, , ,false,<vorgabe>
+longTimeValue,long,false,false, , ,true,<vorgabe>
+longtimeValue,long,false,false, , ,false,<vorgabe>
+longValue,long,false,false, , ,true,<vorgabe>
+stateArray,boolean[],false,false, , ,true,<vorgabe>
+stringArray,String[],false,false, , ,true,<vorgabe>
+stringValue,String,false,false, , ,true,<vorgabe>
+zusatz,double,false,false, , ,true,<vorgabe>
+[IconNames]
+
+
+
+
