@@ -5,9 +5,9 @@
  */
 package de.lb.ruleprocessor.ruleProcessor;
 
-import de.checkpoint.ruleGrouper.CRGRuleGrouperManager;
-import de.checkpoint.ruleGrouper.CriterionEntry;
-import de.checkpoint.ruleGrouper.GroupCriterionEntry;
+import de.lb.ruleprocessor.checkpoint.ruleGrouper.CRGRuleGrouperManager;
+import de.lb.ruleprocessor.checkpoint.ruleGrouper.CriterionEntry;
+import de.lb.ruleprocessor.checkpoint.ruleGrouper.GroupCriterionEntry;
 import de.lb.ruleprocessor.create_criterien.inoutCrit.Criterium;
 import de.lb.ruleprocessor.create_criterien.inoutCrit.CriteriumContainer;
 import de.lb.ruleprocessor.create_criterien.inoutCrit.Utils;

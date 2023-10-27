@@ -5,7 +5,7 @@
  */
 package de.lb.ruleprocessor.ruleProcessor;
 
-import de.checkpoint.server.xml.XMLDOMWriter;
+import de.lb.ruleprocessor.checkpoint.server.xml.XMLDOMWriter;
 import de.lb.ruleprocessor.create_criterien.inoutCrit.Criterium;
 import de.lb.ruleprocessor.create_criterien.inoutCrit.CriteriumContainer;
 import de.lb.ruleprocessor.create_criterien.inoutCrit.Tooltip;

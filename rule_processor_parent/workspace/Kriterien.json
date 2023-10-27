@@ -1,82 +1,271 @@
 {
   "criterien": {
-    "patient": [
+    "Patientenkriterien": [
+      {
+        "name": "pat_number",
+        "type": "DATATYPE_STRING",
+        "description": "Patientennummer",
+        "displayName": "Patientennummer",
+        "tooltip": "Tooltip: Patientennummer",
+        "tooltips": null
+      },
       {
         "name": "first_name",
         "type": "DATATYPE_STRING",
-        "description": "Vorname"
+        "description": "Vorname",
+        "displayName": "Vorname",
+        "tooltip": "Tooltip:  Vorname",
+        "tooltips": null
       },
       {
         "name": "second_name",
         "type": "DATATYPE_STRING",
-        "description": "Nachname"
+        "description": "Nachname",
+        "displayName": "Nachname",
+        "tooltip": "Tooltip:  Nachname",
+        "tooltips": null
       },
       {
         "name": "title",
         "type": "DATATYPE_STRING",
-        "description": "Titel"
+        "description": "Titel",
+        "displayName": "Titel",
+        "tooltip": "Tooltip: Titel",
+        "tooltips": null
       },
       {
         "name": "birth_date",
         "type": "DATATYPE_DATE",
-        "description": "Geburtsdatum"
+        "description": "Geburtsdatum",
+        "displayName": "Geburtsdatum",
+        "tooltip": "Tooltip: Geburtsdatum",
+        "tooltips": null
       },
       {
         "name": "zipcode",
         "type": "DATATYPE_STRING",
-        "description": "Postleitzahl"
+        "description": "Postleitzahl",
+        "displayName": "Postleitzahl",
+        "tooltip": "Tooltip: Postleitzahl",
+        "tooltips": null
       },
       {
         "name": "city",
         "type": "DATATYPE_STRING",
-        "description": "Stadt"
+        "description": "Stadt",
+        "displayName": "Stadt",
+        "tooltip": "Tooltip: Stadt",
+        "tooltips": null
       },
       {
         "name": "address",
         "type": "DATATYPE_STRING",
-        "description": "Adresse(Strasse, Nr)"
+        "description": "Adresse(Strasse, Nr)",
+        "displayName": "Adresse(Strasse, Nr)",
+        "tooltip": "Tooltip: Adresse(Strasse, Nr)",
+        "tooltips": null
       },
       {
         "name": "insurance_number",
         "type": "DATATYPE_STRING",
-        "description": "Versicherungsnummer"
+        "description": "Versicherungsnummer",
+        "displayName": "Versicherungsnummer",
+        "tooltip": "Tooltip: Versicherungsnummer",
+        "tooltips": null
       },
       {
         "name": "insurance_ik",
         "type": "DATATYPE_STRING",
-        "description": "Versicherung"
+        "description": "Versicherung",
+        "displayName": "Versicherung",
+        "tooltip": "Tooltip: Versicherung",
+        "tooltips": null
       }
     ],
-    "case": [
+    "Fallkriterien": [
       {
         "name": "case_number",
         "type": "DATATYPE_STRING",
-        "description": "KH interne Fallnummer"
+        "description": "KH interne Fallnummer",
+        "displayName": "Fallnummer",
+        "tooltip": "tooltip_case_number",
+        "tooltips": null
       },
       {
         "name": "admission_date",
         "type": "DATATYPE_DATE",
-        "description": "Aufnahmedatum"
+        "description": "Aufnahmedatum",
+        "displayName": "Aufnahmedatum",
+        "tooltip": "Datum der Aufnahme des Patienten in die stationäre Behandlung",
+        "tooltips": null
       },
       {
         "name": "admission_reason12",
         "type": "DATATYPE_INTEGER",
-        "description": "Aufnahmegrund12"
+        "description": "Aufnahmegrund12",
+        "displayName": "Aufnahmegrund12",
+        "tooltip": "Tooltip_admission_reason_12",
+        "tooltips": [
+          {
+            "value": "01",
+            "description": "Krankenhausbehandlung, vollstationär",
+            "type": "VALUE"
+          },
+          {
+            "value": "02",
+            "description": "Krankenhausbehandlung, vollstationär mit vorausgegangener vorstationärer Behandlung",
+            "type": "VALUE"
+          },
+          {
+            "value": "03",
+            "description": "Krankenhausbehandlung, teilstationär",
+            "type": "VALUE"
+          },
+          {
+            "value": "04",
+            "description": "vorstationäre Behandlung ohne anschließende vollstationäre Behandlung",
+            "type": "VALUE"
+          },
+          {
+            "value": "05",
+            "description": "stationäre Entbindung",
+            "type": "VALUE"
+          },
+          {
+            "value": "06",
+            "description": "Geburt",
+            "type": "VALUE"
+          },
+          {
+            "value": "07",
+            "description": "Wiederaufnahme wegen Komplikationen (Fallpauschale) nach KFPV 2003",
+            "type": "VALUE"
+          },
+          {
+            "value": "08",
+            "description": "Stationäre Aufnahme zur Organentnahme",
+            "type": "VALUE"
+          },
+          {
+            "value": "09",
+            "description": "-frei-",
+            "type": "VALUE"
+          }
+        ]
       },
       {
         "name": "admission_reason34",
         "type": "DATATYPE_INTEGER",
-        "description": "Aufnahmegrund34"
+        "description": "Aufnahmegrund34",
+        "displayName": "Aufnahmegrund34",
+        "tooltip": "Tooltip_admission_reason_34",
+        "tooltips": [
+          {
+            "value": "01",
+            "description": "Normalfall",
+            "type": "VALUE"
+          },
+          {
+            "value": "02",
+            "description": "Arbeitsunfall / Berufskrankheit (§ 11 Abs. 5 SGB V)",
+            "type": "VALUE"
+          },
+          {
+            "value": "03",
+            "description": "Verkehrsunfall / Sportunfall / Sonstiger Unfall (z. B. § 116 SGB X)",
+            "type": "VALUE"
+          },
+          {
+            "value": "04",
+            "description": "Hinweis auf Einwirkung von äußerer Gewalt",
+            "type": "VALUE"
+          },
+          {
+            "value": "06",
+            "description": "Kriegsbeschädigten-Leiden / BVG-Leiden",
+            "type": "VALUE"
+          },
+          {
+            "value": "07",
+            "description": "Notfall",
+            "type": "VALUE"
+          },
+          {
+            "value": "08",
+            "description": "Erprobungsleistungen nach § 137e SGB V",
+            "type": "VALUE"
+          }
+        ]
       },
       {
         "name": "department",
         "type": "DATATYPE_STRING",
-        "description": "Abteilungsschlüssel"
+        "description": "Abteilungsschlüssel",
+        "displayName": "Abteilungsschlüssel",
+        "tooltip": null,
+        "tooltips": null
       },
       {
         "name": "ward",
         "type": "DATATYPE_STRING",
-        "description": "Station"
+        "description": "Station",
+        "displayName": "Station",
+        "tooltip": null,
+        "tooltips": null
+      },
+      {
+        "name": "admission_cause",
+        "type": "DATATYPE_STRING",
+        "description": "Aufnahmeanlass",
+        "displayName": "Aufnahmenanlass",
+        "tooltip": "Tooltip_admission_cause",
+        "tooltips": [
+          {
+            "value": "E",
+            "description": "Einweisung durch Arzt",
+            "type": "VALUE"
+          },
+          {
+            "value": "Z",
+            "description": "Einweisung durch Zahnarzt",
+            "type": "VALUE"
+          },
+          {
+            "value": "N",
+            "description": "Notfall",
+            "type": "VALUE"
+          },
+          {
+            "value": "R",
+            "description": "Aufnahme nach vorausgehender Behandlung in einer Rehaeinrichtung",
+            "type": "VALUE"
+          },
+          {
+            "value": "V",
+            "description": "Verlegung",
+            "type": "VALUE"
+          },
+          {
+            "value": "K",
+            "description": "Verlegung (Aufnahme) aus einem anderen Krankenhaus i.R.e. Kooperation",
+            "type": "VALUE"
+          },
+          {
+            "value": "G",
+            "description": "Geburt",
+            "type": "VALUE"
+          },
+          {
+            "value": "B",
+            "description": "Begleitperson",
+            "type": "VALUE"
+          },
+          {
+            "value": "A",
+            "description": "Verlegung (mit Behandlungsdauer im verlegenden Krankenhaus bis zu 24 Stunden)",
+            "type": "VALUE"
+          }
+        ]
       }
     ]
   }

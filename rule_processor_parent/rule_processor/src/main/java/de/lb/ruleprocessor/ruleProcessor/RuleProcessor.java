@@ -5,13 +5,13 @@
  */
 package de.lb.ruleprocessor.ruleProcessor;
 
-import de.checkpoint.ruleGrouper.CRGFileRuleManager;
-import de.checkpoint.ruleGrouper.CRGInputOutputBasic;
-import de.checkpoint.ruleGrouper.CRGRule;
-import de.checkpoint.ruleGrouper.CRGRuleGrouperManager;
-import de.checkpoint.ruleGrouper.CRGRuleManager;
-import de.checkpoint.ruleGrouper.CheckpointRuleGrouper;
-import de.checkpoint.ruleGrouper.CriterionEntry;
+import de.lb.ruleprocessor.checkpoint.ruleGrouper.CRGFileRuleManager;
+import de.lb.ruleprocessor.checkpoint.ruleGrouper.CRGInputOutputBasic;
+import de.lb.ruleprocessor.checkpoint.ruleGrouper.CRGRule;
+import de.lb.ruleprocessor.checkpoint.ruleGrouper.CRGRuleGrouperManager;
+import de.lb.ruleprocessor.checkpoint.ruleGrouper.CRGRuleManager;
+import de.lb.ruleprocessor.checkpoint.ruleGrouper.CheckpointRuleGrouper;
+import de.lb.ruleprocessor.checkpoint.ruleGrouper.CriterionEntry;
 
 
 import java.util.Date;

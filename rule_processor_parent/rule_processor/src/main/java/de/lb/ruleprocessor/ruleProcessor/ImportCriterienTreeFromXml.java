@@ -5,10 +5,10 @@
  */
 package de.lb.ruleprocessor.ruleProcessor;
 
-import de.checkpoint.ruleGrouper.CRGFileRuleManager;
-import de.checkpoint.ruleGrouper.CRGRuleGrouperManager;
-import de.checkpoint.ruleGrouper.CriterionEntry;
-import de.checkpoint.ruleGrouper.GroupCriterionEntry;
+import de.lb.ruleprocessor.checkpoint.ruleGrouper.CRGFileRuleManager;
+import de.lb.ruleprocessor.checkpoint.ruleGrouper.CRGRuleGrouperManager;
+import de.lb.ruleprocessor.checkpoint.ruleGrouper.CriterionEntry;
+import de.lb.ruleprocessor.checkpoint.ruleGrouper.GroupCriterionEntry;
 import de.lb.ruleprocessor.create_criterien.inoutCrit.Utils;
 import java.io.File;
 import java.util.ArrayList;

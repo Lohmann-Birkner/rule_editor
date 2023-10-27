@@ -10,9 +10,9 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
             </goals>
             <properties>
-                <exec.args>-classpath %classpath de.lb.ruleprocessor.ruleProcessor.CreateJsonFromExcel D:\Projekte\rule_processor_parent\workspace\Kriterien.xlsx D:\Projekte\rule_processor_parent\workspace\Kriterien.json</exec.args>
+                <exec.args>-classpath %classpath de.lb.ruleprocessor.ruleProcessor.CreateJsonFromExcel D:\Projekte\rule_editor\rule_editor\rule_processor_parent\workspace\Kriterien.xlsx D:\Projekte\rule_editor\rule_editor\rule_processor_parent\workspace\Kriterien.json</exec.args>
                 <exec.executable>java</exec.executable>
-                <exec.workingdir>D:\Projekte\rule_processor_parent\workspace</exec.workingdir>
+                <exec.workingdir>D:\Projekte\rule_editor\rule_editor\rule_processor_parent\workspace</exec.workingdir>
             </properties>
         </action>
         <action>
@@ -25,10 +25,10 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
             </goals>
             <properties>
-                <exec.args>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath de.lb.ruleprocessor.ruleProcessor.CreateJsonFromExcel D:\Projekte\rule_processor_parent\workspace\Kriterien.xlsx D:\Projekte\rule_processor_parent\workspace\Kriterien.json</exec.args>
+                <exec.args>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath de.lb.ruleprocessor.ruleProcessor.CreateJsonFromExcel D:\Projekte\rule_editor\rule_editor\rule_processor_parent\workspace\Kriterien.xlsx D:\Projekte\rule_editor\rule_editor\rule_processor_parent\workspace\Kriterien.json</exec.args>
                 <exec.executable>java</exec.executable>
                 <jpda.listen>true</jpda.listen>
-                <exec.workingdir>D:\Projekte\rule_processor_parent\workspace</exec.workingdir>
+                <exec.workingdir>D:\Projekte\rule_editor\rule_editor\rule_processor_parent\workspace</exec.workingdir>
             </properties>
         </action>
         <action>
@@ -41,9 +41,9 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
             </goals>
             <properties>
-                <exec.args>-classpath %classpath de.lb.ruleprocessor.ruleProcessor.CreateJsonFromExcel D:\Projekte\rule_processor_parent\workspace\Kriterien.xlsx D:\Projekte\rule_processor_parent\workspace\Kriterien.json</exec.args>
+                <exec.args>-classpath %classpath de.lb.ruleprocessor.ruleProcessor.CreateJsonFromExcel D:\Projekte\rule_editor\rule_editor\rule_processor_parent\workspace\Kriterien.xlsx D:\Projekte\rule_editor\rule_editor\rule_processor_parent\workspace\Kriterien.json</exec.args>
                 <exec.executable>java</exec.executable>
-                <exec.workingdir>D:\Projekte\rule_processor_parent\workspace</exec.workingdir>
+                <exec.workingdir>D:\Projekte\rule_editor\rule_editor\rule_processor_parent\workspace</exec.workingdir>
             </properties>
         </action>
     </actions>

@@ -51,7 +51,11 @@ public class ReadHl7Patient {
         }
         
         ReadHl7Patient patient = new ReadHl7Patient(args[0]);
-        patient.readJson();
+        try {
+            patient.readJson();
+        } catch (Exception ex) {
+            Logger.getLogger(ReadHl7Patient.class.getName()).log(Level.SEVERE, null, ex);
+        }
          System.exit(0);
     }
 
@@ -59,7 +63,7 @@ public class ReadHl7Patient {
         jsonPath = pPath;
     }
 
-    private void readJson(){
+    private void readJson()throws Exception{
         try {
                 FhirContext context = FhirContext.forDstu2();
                 IParser parser = context.newJsonParser();
@@ -71,6 +75,13 @@ public class ReadHl7Patient {
 
                     Patient pat = parser.parseResource(Patient.class, new FileInputStream(jFile));
                     if(pat != null){
+                        StringBuilder dump = new StringBuilder();
+                        dumpResource(pat, dump);
+                        LOG.log(Level.INFO, dump.toString());
+                        
+                        if(dump.toString().length() > 0){
+                            return;
+                        } 
                         List<IdentifierDt> identifiers = pat.getIdentifier();
                         dumpIdent( pat.getIdentifierFirstRep(), true);
                         identifiers.forEach((dt) -> {
@@ -272,7 +283,7 @@ public class ReadHl7Patient {
         dump.append("\n");
         Method[] methods = pResource.getClass().getDeclaredMethods();
         for(Method method: methods){
-            if(method.getName().startsWith("get") && method.getParameterCount() == 0){
+            if(method.getName().startsWith("get") && method.getName().endsWith("Rep") && method.getParameterCount() == 0){
                 Class sc =method.getReturnType();
                 dump.append(method.getName()).append(" return type: ").append(sc.getCanonicalName()).append("\n");
 
