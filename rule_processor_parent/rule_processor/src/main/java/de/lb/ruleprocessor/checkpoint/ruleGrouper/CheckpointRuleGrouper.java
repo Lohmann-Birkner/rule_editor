@@ -97,7 +97,7 @@ public class CheckpointRuleGrouper
 
 	private Vector<String> m_corruptRules = new Vector<String>();
 	private boolean isESKA = false;
-
+        private CRGRuleManagerIF mRuleManager;
 	/**
 	 * Gibt das Ein- und Ausgabe-Objekt des Regelkerns zurück.
 	 * <p>
@@ -169,9 +169,9 @@ public class CheckpointRuleGrouper
 	 * Konstruktor
      * @throws java.lang.Exception
 	 */
-	public CheckpointRuleGrouper() throws Exception
+	public CheckpointRuleGrouper(CRGRuleManagerIF ruleManager) throws Exception
 	{
-
+            mRuleManager = ruleManager;
             CRGRuleGrouperManager.instance();
             initRuler(null);
             
@@ -185,7 +185,7 @@ public class CheckpointRuleGrouper
 			/*m_rules = (CRGCheckpointGrouperFileManager.ruleManager()).getAllRulesFromPath(rulePath);
 			 m_ruleSize = m_rules != null ? m_rules.length : 0;*/
 			this.resetRulesArrays();
-			m_allRulesWithYears[ALL_RULES_INDEX] = (CRGFileRuleManager.ruleManager()).getAllRules();
+			m_allRulesWithYears[ALL_RULES_INDEX] = mRuleManager.getAllRules();
 			distributeRules();
 		} catch(CRGRuleGroupException e) {
 			throw e;

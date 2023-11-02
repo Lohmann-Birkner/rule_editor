@@ -51,7 +51,7 @@ public class RuleProcessor {
         m_ruleManager = new CRGFileRuleManager(m_path2rules);
         try {
             // read rules through initialisiong onf CheckpointRuleGrouper
-            m_ruler = new CheckpointRuleGrouper();
+            m_ruler = new CheckpointRuleGrouper(m_ruleManager);
             m_ruler.setInout(new CRGInputOutputBasic());
 
         } catch (Exception ex) {

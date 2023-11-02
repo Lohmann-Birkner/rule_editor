@@ -29,8 +29,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Method;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.hl7.fhir.instance.model.api.IPrimitiveType;
@@ -71,10 +76,14 @@ public class ReadHl7Patient {
                 
                 File jFile = new File(jsonPath);
                 if(jFile.exists() && jFile.canRead()){
-
-
+                    byte[] bytes =  Files.readAllBytes(Paths.get(jsonPath));
+//                    ObjectMapper mapper = new ObjectMapper();
+//                    Map<String, String> map = new HashMap<>();
+//                    map = mapper.readValue(bytes, HashMap.class);
+//                    dumpMap(map);
                     Patient pat = parser.parseResource(Patient.class, new FileInputStream(jFile));
                     if(pat != null){
+                        
                         StringBuilder dump = new StringBuilder();
                         dumpResource(pat, dump);
                         LOG.log(Level.INFO, dump.toString());
@@ -340,5 +349,30 @@ public class ReadHl7Patient {
         System.out.println("relationship.getText: " + (relationship.getText() == null?"null":relationship.getText()));
     }
 
-    
+    private void dumpMap(Map<String, String> map) {
+        Set<String> keys = map.keySet();
+        for(String key:keys){
+            Object obj = map.get(key);
+            System.out.println("key: " + key);
+            switch(obj.getClass().getSimpleName()){
+                case "String": System.out.println("Stringvalue: "+ (String)obj);
+                break;
+                case "ArrayList":
+                    dumpArrayList((ArrayList)obj);
+                    break;
+                default: System.out.println("class: " + obj.getClass().getSimpleName());
+                    
+            }
+        }
+    }
+
+    private void dumpArrayList(ArrayList list){
+        System.out.println("Arraylist size: " + list.size());
+        for(Object obj: list){
+            System.out.println("class: " + obj.getClass().getSimpleName());
+            if(obj instanceof Map){
+                dumpMap((Map)obj);
+            }
+        }
+    }
 }

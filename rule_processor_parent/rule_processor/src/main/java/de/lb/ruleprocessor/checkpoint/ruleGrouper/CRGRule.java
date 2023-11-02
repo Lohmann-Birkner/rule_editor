@@ -81,7 +81,7 @@ public class CRGRule extends DsrRule
 	private String m_poolIdent = "";
         private boolean m_checkTables = true;
 	private Date m_checkDate = null;
-	private CRGRuleManager m_mgr = null;
+	private CRGRuleManagerIF m_mgr = null;
 
 
 	private Vector m_ueMessages = null;
@@ -177,16 +177,16 @@ public class CRGRule extends DsrRule
 		setBasics(ele, null);
 	}
 
-//	protected CRGRule(Element ele, String ident, int year, List ruleTypes, int analyseGrad, CRGRuleManager 	mgr)
-//	{
-//		super("", false);
-//		m_ruleIdentififier = ident;
-//		m_year = year;
-//		m_fullRuleAnalysis = analyseGrad;
-////		m_element = ele;
-//		m_mgr = mgr;
-//		init(ele, ruleTypes);
-//	}
+	protected CRGRule(Element ele, String ident, int year, List ruleTypes, int analyseGrad, CRGRuleManagerIF mgr)
+	{
+		super("", false);
+		m_ruleIdentififier = ident;
+		m_year = year;
+		m_fullRuleAnalysis = analyseGrad;
+//		m_element = ele;
+		m_mgr = mgr;
+		init(ele, ruleTypes);
+	}
 
 	/**
 	 * Konstruktor: Wird von Regelparser verwendet.
@@ -335,12 +335,12 @@ public class CRGRule extends DsrRule
 		}
 	}
 
-	protected CRGRuleManager getRuleManager() throws Exception
+	protected CRGRuleManagerIF getRuleManager() throws Exception
 	{
 
 		if(m_mgr == null) {
-            m_mgr = CRGRuleManager.ruleManager();
-        }
+                    m_mgr = CRGRuleManager.ruleManager();
+                }
 		return m_mgr;
 	}
 
@@ -2111,7 +2111,7 @@ public class CRGRule extends DsrRule
 
         protected double[] getDoubleArrayFromRuleTables(String tableName, String ruleIdentififier, int year) throws Exception {
 
-			return CRGFileRuleManager.ruleManager().getTableDoubleValues(tableName,
+			return getRuleManager().getTableDoubleValues(tableName,
 										 ruleIdentififier, year);
 		
         }
@@ -2574,23 +2574,7 @@ public class CRGRule extends DsrRule
 	public boolean isCPRule()
 	{
 
-            boolean isSL = false;
-            boolean isMed = false;
-            boolean isKH = false;
-            boolean isJavaKern = false;
-            boolean isCare = false;
-            try {
-                    isSL = (getRuleManager().isMedicineAllowed() == 1 && m_hasAMBUSoLeCrit);
-                    isMed = (getRuleManager().isMedicineAllowed() == 1 && m_hasCPMedCrit);
-                    isJavaKern = getRuleManager().isCheckpoint_RuleGrouper() == 1;
-                    isKH = (getRuleManager().isCrossCaseModelAllowed() == 1
-                                && isJavaKern) && m_hasKHCrit;
-                    isCare = isJavaKern && m_hasCareCrit;
-            } catch(Exception e) {}
-            return(!isJavaKern && ((m_hasCPCrit || isSL || isMed)
-                    && !(m_hasRSACrit || m_hasACGCrit /*|| m_hasAMBUMedCrit */ || m_hasKHCrit || m_hasGKRsaCrit)))
-                    || (isJavaKern && ((m_hasCPCrit || isSL || isKH || isMed || isCare)
-                    && !(m_hasRSACrit || m_hasACGCrit /*|| m_hasAMBUMedCrit */ || m_hasGKRsaCrit)));
+            return true;
 	}
 
 	/**

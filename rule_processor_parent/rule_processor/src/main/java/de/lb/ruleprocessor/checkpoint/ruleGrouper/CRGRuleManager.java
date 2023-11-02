@@ -32,7 +32,7 @@ import java.util.logging.Logger;
  * @author unbekannt
  * @version 2.0
  */
-public abstract class CRGRuleManager implements Serializable
+public abstract class CRGRuleManager implements CRGRuleManagerIF, Serializable
 {
 
     private static final Logger LOG = Logger.getLogger(CRGRuleManager.class.getName());
@@ -80,15 +80,15 @@ public abstract class CRGRuleManager implements Serializable
 	/* 3.9.5 2015-09-02 DNi: #FINDBUGS - Attribut m_simpleTimeFormat ist nicht threadsafe! */
 	protected static SimpleDateFormat m_simpleTimeFormat = new SimpleDateFormat(AppResources.DATEFORMAT_TIME);
 
-	public abstract String[] getTableStringValues(String tableName, String identifier, int year) throws Exception;
-
-	public abstract int[] getTableIntValues(String tableName, String identifier, int year) throws Exception;
-
-	public abstract double[] getTableDoubleValues(String tableName, String identifier, int year) throws Exception;
-
-	public abstract java.util.Date[] getTableDateValues(String tableName, String identifier) throws Exception;
-
-	public abstract long[] getTableLongValues(String tableName, String identifier, int year) throws Exception;
+//	public abstract String[] getTableStringValues(String tableName, String identifier, int year) throws Exception;
+//
+//	public abstract int[] getTableIntValues(String tableName, String identifier, int year) throws Exception;
+//
+//	public abstract double[] getTableDoubleValues(String tableName, String identifier, int year) throws Exception;
+//
+//	public abstract java.util.Date[] getTableDateValues(String tableName, String identifier) throws Exception;
+//
+//	public abstract long[] getTableLongValues(String tableName, String identifier, int year) throws Exception;
 
 	protected abstract boolean writeXMLDocument(Document doc, int year, int type, String identifier);
 
@@ -148,7 +148,7 @@ public abstract class CRGRuleManager implements Serializable
 
 	private Calendar m_calendar = null;
 
-        public abstract     CRGRule[] getAllRules() throws Exception;
+        public abstract CRGRule[] getAllRules() throws Exception;
 	/**
 	 * wenn ein Regelpool gespeichert wird, wird userId zu diesen Pool in den Vector geschrieben.
 	 * Nachdem die Regel in sein Regelkern gelesen wurden, wird seine userId aus dem Vector entfernt
@@ -759,6 +759,7 @@ public abstract class CRGRuleManager implements Serializable
 		return null;
 	}
 
+    @Override
 	public CRGRuleTypes getRulesErrorTypeByText(String text) throws Exception
 	{
 		List ruleTypes = getRuleTypes();
@@ -773,6 +774,7 @@ public abstract class CRGRuleManager implements Serializable
 		return null;
 	}
 
+    @Override
 	public CRGRuleTypes getRulesErrorTypeByText(String text, List usingTypeList) throws Exception
 	{
 		if(usingTypeList != null && text != null) {

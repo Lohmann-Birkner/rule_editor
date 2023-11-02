@@ -101,7 +101,7 @@ public class DsrRule extends OSObject implements Comparable
 	/* 3.9.5 2015-09-02 DNi: #FINDBUGS - Attribut m_cal ist nicht threadsafe! */
 	protected static Calendar m_cal = new GregorianCalendar();
 	List m_types = null;
-    protected boolean m_isCheckpoint = true; // temporäre Abhilfe um den Zugriff auf einigen Klassen zu vermeiden bei CheckpointGrouper ohne CheckpoinDRG
+        protected boolean m_isCheckpoint = true; // temporäre Abhilfe um den Zugriff auf einigen Klassen zu vermeiden bei CheckpointGrouper ohne CheckpoinDRG
 
 	public DsrRule()
 	{

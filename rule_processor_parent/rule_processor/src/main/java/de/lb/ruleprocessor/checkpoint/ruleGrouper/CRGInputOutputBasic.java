@@ -93,57 +93,79 @@ public class CRGInputOutputBasic
                 int index = pCrit.getM_index();
                 switch(pCrit.getType()){
                     case DATATYPE_STRING:
-                        if(pFieldValue instanceof String){
+                        if(pFieldValue == null){
+                            this.setStringValue("", index);
+                        }else if(pFieldValue instanceof String){
                             this.setStringValue((String)pFieldValue, index);
                         }
                         break;
                     case DATATYPE_INTEGER:
-                        if(pFieldValue instanceof Integer){
+                        if(pFieldValue == null){
+                            this.setIntegerValue(0, index);
+                        }else if(pFieldValue instanceof Integer){
                             this.setIntegerValue((Integer)pFieldValue, index);
                         }
                         break;
                     case DATATYPE_DOUBLE:
-                        if(pFieldValue instanceof Double){
+                        if(pFieldValue == null){
+                            this.setDoubleValue(0, index);
+                        }else if(pFieldValue instanceof Double){
                             this.setDoubleValue((Double)pFieldValue, index);
                         }
                         break;
                     case DATATYPE_DATE:
-                        if(pFieldValue instanceof Date){
+                        if(pFieldValue == null){
+                            this.setDateValue(null, index);
+                            this.setLongValue(0, index);
+                        }else if(pFieldValue instanceof Date){
                             this.setDateValue((Date)pFieldValue, index);
                             this.setLongValue(getDateWithoutTimeAsLong((Date) pFieldValue), index);
                         }
                         break;
                     case DATATYPE_ARRAY_STRING:
-                        if(pFieldValue instanceof String){
+                        if(pFieldValue == null){
+                            this.setArrayStringValue("", index);
+                        }else if(pFieldValue instanceof String){
                             this.setArrayStringValue((String)pFieldValue, index);
                         }
                         break;
                     case DATATYPE_ARRAY_INTEGER:
-                        if(pFieldValue instanceof Integer){
+                        if(pFieldValue == null){
+                            this.setArrayIntegerValue(0, index);
+                        }else if(pFieldValue instanceof Integer){
                             this.setArrayIntegerValue((Integer)pFieldValue, index);
                         }
                         break;
                     case DATATYPE_ARRAY_DOUBLE:
-                        if(pFieldValue instanceof Double){
+                        if(pFieldValue == null){
+                            this.setArrayDoubleValue(0, index);
+                        }else if(pFieldValue instanceof Double){
                             this.setArrayDoubleValue((Double)pFieldValue, index);
                         }
                         break;
                     case DATATYPE_ARRAY_DATE:
-                         if(pFieldValue instanceof Date){
+                         if(pFieldValue == null){
+                            this.setArrayDateValue(null, index);
+                            this.setArrayLongValue(0, index);
+                        }else if(pFieldValue instanceof Date){
                             this.setArrayDateValue((Date)pFieldValue, index);
                             this.setArrayLongValue(getDateWithoutTimeAsLong((Date) pFieldValue), index);
                         }
                        break;
                     case DATATYPE_DAY_TIME:
-                        if(pFieldValue instanceof Date){
-                             int timeOfDay = getTimeFromDate((Date)pFieldValue);
+                        if(pFieldValue == null){
+                            this.setLongValue(0, index);
+                        }else if(pFieldValue instanceof Date){
+                            
                             this.setLongValue(getDateWithoutTimeAsLong((Date) pFieldValue), index);
                         }
                        
                         break;
                     case DATATYPE_ARRAY_DAY_TIME:
-                        if(pFieldValue instanceof Date){
-                             int timeOfDay = getTimeFromDate((Date)pFieldValue);
+                        if(pFieldValue == null){
+                            this.setArrayLongValue(0, index);
+                        }else if(pFieldValue instanceof Date){
+                            
                             this.setArrayLongValue(getDateWithoutTimeAsLong((Date) pFieldValue), index);
                         }
                        

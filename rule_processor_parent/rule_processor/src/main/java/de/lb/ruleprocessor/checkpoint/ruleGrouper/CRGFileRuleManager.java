@@ -1145,6 +1145,31 @@ public class CRGFileRuleManager extends CRGRuleManager
         return getAllRulesFromPath(m_rulesPath);
     }
 
+    @Override
+    public String[] getStringArrayFromRuleTables(String tableName, String ruleIdent, int year) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int[] getIntArrayFromRuleTables(String tableName, String ruleIdent, int year) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public double[] getDoubleArrayFromRuleTables(String tableName, String ruleIdent, int year) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public long[] getLongArrayFromRuleTables(String tableName, String ruleIdent, int year) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Date[] getDateArrayFromRuleTables(String tableName, String ruleIdent, int year) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
 
 class CRGFileRuleFilter implements FilenameFilter
