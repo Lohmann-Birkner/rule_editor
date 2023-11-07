@@ -21,13 +21,14 @@ public class Criterium {
         String description;
         String displayName;
         String tooltip;
+        String accessMethod;
         List<Tooltip> tooltips;
         public Criterium(){
             
         }
-        public Criterium(@NotNull String pName, @NotNull String pType){
+        public Criterium(@NotNull String pName){
             name = pName;
-            type = pType;
+
 
         }
 
@@ -43,7 +44,7 @@ public class Criterium {
             return type;
         }
 
-        public void setType(String type) {
+        public void setCriterionType(String type) {
             this.type = type;
         }
 
@@ -88,6 +89,14 @@ public class Criterium {
             tooltips = new ArrayList<>();
         }
         tooltips.add(tooltip);
+    }
+
+    public String getAccessMethod() {
+        return accessMethod;
+    }
+
+    public void setAccessMethod(String accessMethod) {
+        this.accessMethod = accessMethod;
     }
     
     

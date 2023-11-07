@@ -17,11 +17,14 @@ import de.lb.ruleprocessor.json_processor.JsonFileWriter;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -82,34 +85,76 @@ public class CreateJsonFromExcel {
                   createTooltips4Criterium(sheet, tooltip2criterium.get(sheetName));
                   continue;
               }
+              Map<String, Integer> columnName2position = new HashMap<>();
               while(itr.hasNext()){
                   Row row = itr.next();
                   if(row.getRowNum() == 0){
+// create mapping column to attribute
+                      createMappingColumn2Position(columnName2position, row);  
                       continue;
                   }
-                  if(row.getCell(0) != null && row.getCell(0).getCellType()== CellType.STRING
-                          && row.getCell(1) != null && row.getCell(1).getCellType() == CellType.STRING 
-                          && Utils.DATATYPES.get(row.getCell(1).getStringCellValue()) != null ){
-                        Criterium crit = new Criterium(row.getCell(0).getStringCellValue(), row.getCell(1).getStringCellValue());
-                        if(row.getCell(2) != null && row.getCell(2).getCellType() == CellType.STRING ){
-                            crit.setDescription(row.getCell(2).getStringCellValue());
+                  Integer cpNamePos = columnName2position.get(Utils.ATTRIBUTES.CPNAME.name());
+                  Method[] critMethods =  Criterium.class.getMethods();
+                  if(cpNamePos != null && row.getCell(cpNamePos) != null && row.getCell(cpNamePos).getCellType() == CellType.STRING){
+                   
+                    Criterium crit = new Criterium(row.getCell(cpNamePos).getStringCellValue());
+                    criterien.addCriterium(sheetName == null?"default":sheetName, crit);
+                  
+                    Set<String> keys = columnName2position.keySet();
+                    for(String key: keys){
+                        Integer pos = columnName2position.get(key);
+                        if(key.equalsIgnoreCase(Utils.ATTRIBUTES.CPNAME.name())){
+                            continue;
                         }
-                        if(row.getCell(3) != null && row.getCell(3).getCellType() == CellType.STRING){
-                            crit.setDisplayName(row.getCell(3).getStringCellValue());
-                        }else{
-                            crit.setDisplayName(crit.getName());
+                        if(key.equalsIgnoreCase(Utils.TAGS.TOOLTIP.name())){
+                            if(row.getCell(pos) != null && row.getCell(pos).getCellType() == CellType.STRING){
+                                String tooltip = row.getCell(pos).getStringCellValue();
+                                crit.setTooltip(tooltip);
+                                if(tooltip != null && tooltip.toLowerCase().startsWith(Utils.TAGS.TOOLTIP.name().toLowerCase())){
+     // create tooltips from extra sheet     
+                                    tooltip2criterium.put(tooltip.toLowerCase(), crit);
+                                }
+                            }
+                        
                         }
-
-                        if(row.getCell(4) != null && row.getCell(4).getCellType() == CellType.STRING){
-                            String tooltip = row.getCell(4).getStringCellValue();
-                            crit.setTooltip(tooltip);
-                            if(tooltip != null && tooltip.toLowerCase().startsWith("tooltip")){
- // create tooltips from extra sheet     
-                                tooltip2criterium.put(tooltip.toLowerCase(), crit);
+                        String key1 = key.replaceAll("_", "");
+                        for(Method method : critMethods){
+                           
+                            if(method.getName().startsWith("set") && method.getName().toLowerCase().endsWith(key1.toLowerCase())){
+                                
+                                 if(pos != null && row.getCell(pos) != null && row.getCell(pos).getCellType() == CellType.STRING){
+                                    method.invoke(crit, row.getCell(pos).getStringCellValue());
+                                 }
                             }
                         }
-                         criterien.addCriterium(sheetName == null?"default":sheetName, crit);
-                  } 
+                    }
+                  }
+//                  if(row.getCell(0) != null && row.getCell(0).getCellType()== CellType.STRING
+//                          && row.getCell(1) != null && row.getCell(1).getCellType() == CellType.STRING 
+//                          && Utils.DATATYPES.get(row.getCell(1).getStringCellValue()) != null ){
+//                        Criterium crit = new Criterium(row.getCell(0).getStringCellValue(), row.getCell(1).getStringCellValue());
+//                        if(row.getCell(2) != null && row.getCell(2).getCellType() == CellType.STRING ){
+//                            crit.setDescription(row.getCell(2).getStringCellValue());
+//                        }
+//                        if(row.getCell(3) != null && row.getCell(3).getCellType() == CellType.STRING){
+//                            crit.setDisplayName(row.getCell(3).getStringCellValue());
+//                        }else{
+//                            crit.setDisplayName(crit.getName());
+//                        }
+//
+//                        if(row.getCell(4) != null && row.getCell(4).getCellType() == CellType.STRING){
+//                            String tooltip = row.getCell(4).getStringCellValue();
+//                            crit.setTooltip(tooltip);
+//                            if(tooltip != null && tooltip.toLowerCase().startsWith("tooltip")){
+// // create tooltips from extra sheet     
+//                                tooltip2criterium.put(tooltip.toLowerCase(), crit);
+//                            }
+//                        }
+//                        if(row.getCell(6) != null && row.getCell(6).getCellType() == CellType.STRING){
+//                            crit.setAccessMethod(row.getCell(6).getStringCellValue());
+//                        }
+//                         criterien.addCriterium(sheetName == null?"default":sheetName, crit);
+//                  } 
                   
               }
 
@@ -141,5 +186,20 @@ public class CreateJsonFromExcel {
             Logger.getLogger(CreateJsonFromExcel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    private void createMappingColumn2Position(Map<String, Integer> columnName2position,  Row row) {
+         Iterator<Cell> cells = row.cellIterator();
+         while(cells.hasNext()){
+             Cell cell = cells.next();
+             if(cell != null && cell.getCellType() == CellType.STRING){
+                 String name = cell.getStringCellValue();
+                 if(name.equalsIgnoreCase(Utils.TAGS.TOOLTIP.name()) || Utils.checkIsCriteriaAttribute(name)){
+                    columnName2position.put(name, cell.getColumnIndex());
+                 }
+             }
+         }
+    }
+    
+
     
 }

@@ -86,6 +86,7 @@ public class CreateXmlFromExcel extends CreateJsonFromExcel{
                 critXml.setAttribute(Utils.ATTRIBUTES.CPNAME.name().toLowerCase(), crit.getName().toLowerCase());
                 critXml.setAttribute(Utils.ATTRIBUTES.DESCRIPTION.name().toLowerCase(), crit.getDescription());
                 critXml.setAttribute(Utils.ATTRIBUTES.CRITERION_TYPE.name().toLowerCase(), crit.getType());
+                critXml.setAttribute(Utils.ATTRIBUTES.ACCESS_METHOD.name().toLowerCase(), crit.getAccessMethod());
                 critXml.setAttribute(Utils.ATTRIBUTES.USAGE.name().toLowerCase(), Utils.USAGE.CRIT_RULE_ONLY.name());
                 List<Tooltip> tt = crit.getTooltips();
                 if(tt.isEmpty() && crit.getTooltip() != null && !crit.getTooltip().isEmpty()){

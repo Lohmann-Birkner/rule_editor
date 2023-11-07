@@ -92,7 +92,8 @@ public class Utils {
         INTERVAL_LIMIT, 
         INTERVAL_GROUP,
         DOUBLE_FORMAT,
-        INTEGER_FORMAT
+        INTEGER_FORMAT,
+        ACCESS_METHOD
     };
     
     public enum USAGE{
@@ -122,6 +123,15 @@ public class Utils {
            put( "DATATYPE_ALL_OPERATIONS_NESTED", DATATYPE_ALL_OPERATIONS_NESTED);
        }
    };
+    
+    public static boolean checkIsCriteriaAttribute(String pName){
+        try{
+       return  ATTRIBUTES.valueOf(pName) != null;
+        }catch(IllegalArgumentException ex){
+// could not find in attribute enum list
+            return false;
+        }
+    }
 
    
     /**
