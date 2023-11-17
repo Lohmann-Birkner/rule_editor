@@ -62,8 +62,8 @@ public class CreateJsonFromExcel {
                 continue;
             }
             if(row.getCell(0) != null && row.getCell(0).getCellType()== CellType.STRING
-                   && row.getCell(1) != null && row.getCell(1).getCellType() == CellType.STRING ){
-                crit.addTooltip(new Tooltip(row.getCell(0).getStringCellValue(), row.getCell(1).getStringCellValue()));
+                   && (row.getCell(1) == null || row.getCell(1) != null && row.getCell(1).getCellType() == CellType.STRING )){
+                crit.addTooltip(new Tooltip(row.getCell(0).getStringCellValue(), row.getCell(1) == null?null: row.getCell(1).getStringCellValue()));
             }          
         }
     }
@@ -110,7 +110,7 @@ public class CreateJsonFromExcel {
                             if(row.getCell(pos) != null && row.getCell(pos).getCellType() == CellType.STRING){
                                 String tooltip = row.getCell(pos).getStringCellValue();
                                 crit.setTooltip(tooltip);
-                                if(tooltip != null && tooltip.toLowerCase().startsWith(Utils.TAGS.TOOLTIP.name().toLowerCase())){
+                                if(tooltip != null && tooltip.toLowerCase().startsWith(Utils.TAGS.TOOLTIP.name().toLowerCase()+ "_")){
      // create tooltips from extra sheet     
                                     tooltip2criterium.put(tooltip.toLowerCase(), crit);
                                 }

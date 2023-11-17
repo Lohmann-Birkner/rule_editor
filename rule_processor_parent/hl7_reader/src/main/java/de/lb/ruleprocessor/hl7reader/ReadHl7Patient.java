@@ -20,6 +20,7 @@ import ca.uhn.fhir.model.dstu2.resource.BaseResource;
 import ca.uhn.fhir.model.dstu2.resource.Patient;
 import ca.uhn.fhir.model.dstu2.resource.Patient.Communication;
 import ca.uhn.fhir.model.dstu2.resource.Patient.Contact;
+import ca.uhn.fhir.model.dstu2.resource.Patient.Link;
 import ca.uhn.fhir.model.dstu2.valueset.MaritalStatusCodesEnum;
 import ca.uhn.fhir.model.primitive.BooleanDt;
 import ca.uhn.fhir.parser.DataFormatException;
@@ -73,7 +74,8 @@ public class ReadHl7Patient {
                 FhirContext context = FhirContext.forDstu2();
                 IParser parser = context.newJsonParser();
 
-                
+                Package pack = Patient.class.getPackage();
+
                 File jFile = new File(jsonPath);
                 if(jFile.exists() && jFile.canRead()){
                     byte[] bytes =  Files.readAllBytes(Paths.get(jsonPath));
@@ -83,7 +85,7 @@ public class ReadHl7Patient {
 //                    dumpMap(map);
                     Patient pat = parser.parseResource(Patient.class, new FileInputStream(jFile));
                     if(pat != null){
-                        
+                        Link link = pat.getLinkFirstRep();
                         StringBuilder dump = new StringBuilder();
                         dumpResource(pat, dump);
                         LOG.log(Level.INFO, dump.toString());
