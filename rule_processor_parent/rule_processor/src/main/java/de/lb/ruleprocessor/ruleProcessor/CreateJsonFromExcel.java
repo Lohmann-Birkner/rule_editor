@@ -18,8 +18,10 @@ import de.lb.ruleprocessor.json_processor.JsonFileWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
@@ -54,7 +56,7 @@ public class CreateJsonFromExcel {
     }
 
 
-    private void createTooltips4Criterium(@NotNull Sheet sheet, @NotNull Criterium crit) {
+    private void createTooltips4Criterium(@NotNull Sheet sheet, @NotNull List<Criterium >crits) {
         Iterator<Row>itr = sheet.iterator();
         while(itr.hasNext()){
             Row row = itr.next();
@@ -63,7 +65,9 @@ public class CreateJsonFromExcel {
             }
             if(row.getCell(0) != null && row.getCell(0).getCellType()== CellType.STRING
                    && (row.getCell(1) == null || row.getCell(1) != null && row.getCell(1).getCellType() == CellType.STRING )){
-                crit.addTooltip(new Tooltip(row.getCell(0).getStringCellValue(), row.getCell(1) == null?null: row.getCell(1).getStringCellValue()));
+                for(Criterium crit: crits){
+                    crit.addTooltip(new Tooltip(row.getCell(0).getStringCellValue(), row.getCell(1) == null?null: row.getCell(1).getStringCellValue()));
+                }
             }          
         }
     }
@@ -72,7 +76,7 @@ public class CreateJsonFromExcel {
     protected CriteriumContainer doExecute() throws Exception{
         
       File excelFile = new File(mExcelPath);
-      Map<String, Criterium> tooltip2criterium = new HashMap<>();
+      Map<String, List<Criterium>> tooltip2criterium = new HashMap<>();
       CriteriumContainer criterien = new CriteriumContainer();
       if(excelFile.isFile() && excelFile.canRead()){
           Workbook book = new XSSFWorkbook(new FileInputStream(excelFile));
@@ -111,8 +115,13 @@ public class CreateJsonFromExcel {
                                 String tooltip = row.getCell(pos).getStringCellValue();
                                 crit.setTooltip(tooltip);
                                 if(tooltip != null && tooltip.toLowerCase().startsWith(Utils.TAGS.TOOLTIP.name().toLowerCase()+ "_")){
-     // create tooltips from extra sheet     
-                                    tooltip2criterium.put(tooltip.toLowerCase(), crit);
+     // create tooltips from extra sheet  
+                                    List<Criterium> crits = tooltip2criterium.get(tooltip.toLowerCase());
+                                    if(crits == null){
+                                        crits = new ArrayList<>();
+                                        tooltip2criterium.put(tooltip.toLowerCase(),  crits);
+                                    }
+                                    crits.add(crit);
                                 }
                             }
                         
