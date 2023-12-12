@@ -12,6 +12,7 @@ import de.lb.ruleprocessor.checkpoint.ruleGrouper.CRGRuleGrouperManager;
 import de.lb.ruleprocessor.checkpoint.ruleGrouper.CRGRuleManager;
 import de.lb.ruleprocessor.checkpoint.ruleGrouper.CheckpointRuleGrouper;
 import de.lb.ruleprocessor.checkpoint.ruleGrouper.CriterionEntry;
+import de.lb.ruleprocessor.create_criterien.inoutCrit.CriteriumContainer;
 
 
 import java.util.Date;
@@ -75,11 +76,20 @@ public class RuleProcessor {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       if(args.length < 2){
-           LOG.log(Level.INFO, "Usage <path to  ctritrion> <path to rules>");
+       if(args.length < 3){
+           LOG.log(Level.INFO, "Usage ypath to excel> <path to  ctritrion> <path to rules>");
            System.exit(0);
        }
-       RuleProcessor processor = new RuleProcessor(args[0], args[1]);
+                CreateXmlFromExcel coverter = new CreateXmlFromExcel(args[0], args[1]);   
+        try {
+            CriteriumContainer container = coverter.doExecute();
+            coverter.write2xml(container);
+        } catch (Exception ex) {
+            Logger.getLogger(CreateXmlFromExcel.class.getName()).log(Level.SEVERE, null, ex);
+            System.exit(-1);
+        }
+        
+       RuleProcessor processor = new RuleProcessor(args[1], args[2]);
         try {
             processor.checkWithRules();
         } catch (Exception ex) {

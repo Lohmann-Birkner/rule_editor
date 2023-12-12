@@ -5,9 +5,6 @@ package de.lb.ruleprocessor.checkpoint.ruleGrouper;
  *
  * <p>Beschreibung: Fehlermeldungen Regelprüfung</p>
  *
- * <p>Copyright: Lohmann & Birkner Health Care Consulting GmbH </p>
- *
- * <p>Organisation: Lohmann & Birkner Health Care Consulting GmbH </p>
  *
  * @author unbekannt
  * @version 2.0

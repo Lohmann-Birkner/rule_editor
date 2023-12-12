@@ -386,8 +386,7 @@ public class CRGRuleElement implements Serializable
 
        /**
          * setzt die Parameter - Felder für den MaxInrevalEigenschaft - Method in den CRGRuleElement
-         * @param ruleEle
-         * @param parameter 
+         * @param parameter string
          */
         public void setParameter4MaxIntervalTableMethod(  String parameter)
         {

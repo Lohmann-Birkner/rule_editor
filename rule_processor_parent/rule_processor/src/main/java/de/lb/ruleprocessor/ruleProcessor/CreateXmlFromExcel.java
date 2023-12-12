@@ -40,7 +40,7 @@ public class CreateXmlFromExcel extends CreateJsonFromExcel{
     
    public static void main(String args[]){
         if(args.length < 2){
-            LOG.log(Level.INFO, "Usage: <excel file path> <json file path>");
+            LOG.log(Level.INFO, "Usage: <excel file path> <xml file path>");
             System.exit(0);
         }
     
@@ -57,7 +57,7 @@ public class CreateXmlFromExcel extends CreateJsonFromExcel{
        super(pExcelPath, pXmlPath);
     }
 
-    private void write2xml(CriteriumContainer container) throws Exception{
+    public void write2xml(CriteriumContainer container) throws Exception{
         if(container == null || container.getCriterien().isEmpty()){
             Logger.getLogger(CreateXmlFromExcel.class.getName()).log(Level.INFO, " no criterien found");
             return;

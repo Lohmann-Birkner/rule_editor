@@ -9,10 +9,7 @@ import java.util.ArrayList;
  * <p>Überschrift: Checkpoint DRG</p>
  *
  * <p>Beschreibung: Vorschläge einer Regel</p>
- *
- * <p>Copyright: Lohmann & Birkner Health Care Consulting GmbH </p>
- *
- * <p>Organisation: Lohmann & Birkner Health Care Consulting GmbH </p>
+
  *
  * @author unbekannt
  * @version 2.0

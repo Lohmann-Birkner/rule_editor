@@ -846,10 +846,10 @@ public abstract class CRGRuleManager implements CRGRuleManagerIF, Serializable
 	/**
 	 * lädt die Regel in den Regelkern
 	 * @param ruleCRG CheckpointRuleGrouper
-	 * @param userId long
-	 * @param roles long[]
+	 * @param identifier string
+	 * @param year int
 	 * @param ruleList List
-	 * @throws Exception
+	 * @throws Exception exc
 	 */
 	public void loadRulesInRuleGrouper(CheckpointRuleGrouper ruleCRG, String identifier, int year, 
 		java.util.List ruleList) throws Exception

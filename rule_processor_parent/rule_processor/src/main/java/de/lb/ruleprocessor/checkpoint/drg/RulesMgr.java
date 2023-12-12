@@ -457,7 +457,7 @@ public class RulesMgr
 	 * sieh Dokument "Die Rollen und Benutzer Ebene entf�llt."
 	 * @param roleID long
 	 * @return Vector
-	 * @throws RemoteException
+        * @throws java.rmi.RemoteException exc
 	 */
 	public Vector getRulesTypeForRole(long roleID) throws java.rmi.RemoteException
 	{

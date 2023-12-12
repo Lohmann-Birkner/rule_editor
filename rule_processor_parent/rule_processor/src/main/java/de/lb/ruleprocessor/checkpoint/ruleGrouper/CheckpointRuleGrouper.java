@@ -15,10 +15,6 @@ import java.util.logging.Logger;
  * <p>Überschrift: Checkpoint Regelkern</p>
  * <p>Beschreibung: Klasse zur Ein- und Ausgabe der Prüfkriterien</p>
  *
- * <p>Copyright: Lohmann & Birkner Health Care Consulting GmbH</p>
- *
- * <p>Organisation: Lohmann & Birkner Health Care Consulting GmbH</p>
- *
  * @author Thomas Dehne
  * @version 2.0
  */
@@ -509,7 +505,9 @@ public class CheckpointRuleGrouper
 
 	/**
 	 * Setzt alle Werte zu einem Fall zurück.
-	 * @param CRGInputOutputBasic inout
+     * @param inout inout
+     * @return ret
+
 	 * @throws Exception
 	 */
 	protected CRGInputOutputBasic newCase(CRGInputOutputBasic inout) throws Exception

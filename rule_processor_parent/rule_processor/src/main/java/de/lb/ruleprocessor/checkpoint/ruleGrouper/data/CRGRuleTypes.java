@@ -11,10 +11,6 @@ import de.lb.ruleprocessor.checkpoint.server.db.OSObject;
  *
  * <p>Beschreibung: Regeltypen</p>
  *
- * <p>Copyright: Lohmann & Birkner Health Care Consulting GmbH </p>
- *
- * <p>Organisation: Lohmann & Birkner Health Care Consulting GmbH </p>
- *
  * @author unbekannt
  * @version 2.0
  */

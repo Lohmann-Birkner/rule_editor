@@ -99,10 +99,7 @@ public class RuleAttributes
 
 	/**
 	 * Gibt den Typ der Regel zurück.
-	 * <p>
-	 * Derzeit:<br/>
-	 * error - Fehler<br/>
-	 * warning - Warnung<br/>
+	 * 
 	 * suggestion - Hinweis
 	 * @return String
 	 */
@@ -215,8 +212,8 @@ public class RuleAttributes
 
 	/**
 	 * Gibt die ID der Regel zurück.
-	 * <p>
-	 * Durch diese ID kann die Regel im Regelsatz eindeutig identifiziert werden.<br/>
+	 * 
+	 * Durch diese ID kann die Regel im Regelsatz eindeutig identifiziert werden.
 	 * Diese IDs werden auch von Grouper als Prüfergebnis zurück gegeben.
 	 * @return String
 	 */

@@ -25,9 +25,6 @@ import de.checkpoint.server.rmServer.medicineManager.RmmSole;*/
  *
  * <p>Beschreibung: Ein-/Ausgabe-Objekt des Regelkerns</p>
  *
- * <p>Copyright: Lohmann & Birkner Health Care Consulting GmbH </p>
- *
- * <p>Organisation: Lohmann & Birkner Health Care Consulting GmbH</p>
  *
  * @author unbekannt
  * @version 2.0
@@ -339,7 +336,6 @@ public class CRGInputOutputBasic
 	 * Mapping auf CP Lokalisation.
 	 * @param value String
 	 * @return int
-	 * @throws Exception
 	 */
 	protected int getLocalisation(String value)
 	{

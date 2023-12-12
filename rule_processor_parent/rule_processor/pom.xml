@@ -1,10 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
     <groupId>de.lb.ruleProcessor</groupId>
-    <artifactId>rule_processor</artifactId>
+    <artifactId>rule_processor_parent</artifactId>
     <version>0.1.5-SNAPSHOT</version>
+    </parent>
+    <artifactId>rule_processor</artifactId>
     <packaging>jar</packaging>
+	<profiles>
+        <profile>
+            <id>buildJar</id>
+            <activation>
+                <property>
+                    <name>buildJar</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <!-- Build an executable JAR -->
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <version>3.1.2</version>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <addClasspath>true</addClasspath>
+                                    <classpathPrefix>lib/</classpathPrefix>
+                                    <mainClass>de.lb.ruleprocessor.ruleProcessor.RuleProcessor</mainClass>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>3.1.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <addClasspath>true</addClasspath>
+                                    <mainClass>de.lb.ruleprocessor.ruleProcessor.RuleProcessor</mainClass>
+                                    <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                                    <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                                </manifest>
+                                <manifestEntries>
+                                    <Multi-Release>true</Multi-Release>
+                                </manifestEntries>
+                            </archive>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>pl.jsolve</groupId>
+                                <artifactId>templ4docx</artifactId>
+                                <version>2.0.2</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+	</profiles>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <SCM-Revision>${buildNumber}</SCM-Revision>
+                            <Build-Time>${maven.build.timestamp}</Build-Time>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.4</version>
+                <configuration>
+                    <doCheck>false</doCheck>
+                    <doUpdate>false</doUpdate>
+                    <useLastCommittedRevision>true</useLastCommittedRevision>
+                    <!-- <scmConnectionUrl>scm:svn:https://lbsvn-02.l-b.local/svn/CheckpointX_Repository/trunk/CheckpointX/cpx-client-app-parent/cpx-client-app-v2</scmConnectionUrl> -->
+                    <revisionOnScmFailure>unknownbuild</revisionOnScmFailure>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>create-build-number</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <!--
+                        <source>11</source>
+                        <target>11</target>
+                    -->
+                    <showDeprecation>false</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                    <compilerArgs>
+                        <arg>-Xlint:cast</arg>
+                        <arg>-Xlint:deprecation</arg>
+                        <arg>-Xlint:divzero</arg>
+                        <arg>-Xlint:empty</arg>
+                        <arg>-Xlint:fallthrough</arg>
+                        <arg>-Xlint:finally</arg>
+                        <arg>-Xlint:overrides</arg>
+                        <arg>-Xlint:path</arg>
+                        <arg>-Xlint:rawtypes</arg>
+                        <!-- <arg>-Xlint:unchecked</arg> -->
+                        <arg>-Xlint:-serial</arg>
+                        <!-- <arg>-Xlint:rawtypes</arg>
+                        <arg>-Xdiags:verbose</arg> -->
+                        <!-- <arg>-Xlint:all</arg> -->
+                        <!-- <arg>-Xdiags:verbose</arg>
+                        <arg>-Xlint:all,-options,-path</arg> -->
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
 <dependency>
     <groupId>org.w3c</groupId>

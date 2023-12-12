@@ -36,10 +36,6 @@ import org.w3c.dom.Node;
  *
  * <p>Beschreibung: CRGRule</p>
  *
- * <p>Copyright: Lohmann & Birkner Health Care Consulting GmbH </p>
- *
- * <p>Organisation: Lohmann & Birkner Health Care Consulting GmbH </p>
- *
  * @author unbekannt
  * @version 2.0
  */
@@ -258,7 +254,7 @@ public class CRGRule extends DsrRule
 	/**
 	 * Erzeugt das Regel-Objekt aus dem Root-Element der Regel: wird von Regelparser verwendet.
 	 * @param ele Element : Root-Element der Regel
-	 * @param identifier String : Regelidentifier
+         * @param ruleTypes
 	 */
     @Override
 	public void setValuesByElement(Element ele, List ruleTypes)
@@ -1983,8 +1979,7 @@ public class CRGRule extends DsrRule
 	 *
 	 * @param ruleEle CRGRuleElement
 	 * @param val String
-	 * @param opType int
-	 * @throws Exception
+	 * @throws Exception exception
 	 */
 	protected void setStringArrayTable(CRGRuleElement ruleEle, String val) throws Exception
 	{

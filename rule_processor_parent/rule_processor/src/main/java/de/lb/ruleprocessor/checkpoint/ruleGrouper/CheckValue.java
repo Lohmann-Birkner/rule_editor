@@ -1392,7 +1392,7 @@ public class CheckValue
 	 * liefert null wenn für die Gruppe groupDependIndex
 	 * noch kein Array angelegt wurde
 	 *
-	 * @param i int
+	 * @param groupDependIndex int
 	 * @return boolean
 	 */
 	public boolean[] getGroupResults(int groupDependIndex)
@@ -1408,7 +1408,7 @@ public class CheckValue
 	 * setzt den Array aus groupDependResluts auf die groupDependIndex Stelle in
 	 * den Array groupDependsIndex
 	 *
-	 * @param i int
+	 * @param groupDependIndex int
 	 */
 	public void setGroupResults(int groupDependIndex)
 	{
@@ -1504,7 +1504,7 @@ public class CheckValue
 	/**
 	 * resetGroupIndexResult
 	 *
-	 * @param groupDependIndex int
+	 * @param groupIndex int
 	 */
 	public void resetGroupIndexResult(int groupIndex)
 	{
