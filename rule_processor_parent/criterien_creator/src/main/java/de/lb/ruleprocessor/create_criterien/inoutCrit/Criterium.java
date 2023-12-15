@@ -99,6 +99,12 @@ public class Criterium {
         this.accessMethod = accessMethod;
     }
     
+        @Override
+    public String toString(){
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("Name: ").append(name).append("; Type: ").append(type).append(";");
+        return buffer.toString();
+    }
     
 }
     

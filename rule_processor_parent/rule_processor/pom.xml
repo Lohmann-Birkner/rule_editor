@@ -166,12 +166,6 @@
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>de.lb.ruleProcessor</groupId>
-            <artifactId>json_processor</artifactId>
-            <version>0.1.5-SNAPSHOT</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
             <groupId>com.intellij</groupId>
             <artifactId>annotations</artifactId>
             <version>9.0.4</version>

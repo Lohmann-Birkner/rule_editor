@@ -33,7 +33,7 @@ import org.w3c.dom.Element;
  *
  * @author gerschmann
  */
-public class CreateXmlFromExcel extends CreateJsonFromExcel{
+public class CreateXmlFromExcel extends CriteriaCreaterFromExcel{
 
     private static final Logger LOG = Logger.getLogger(CreateXmlFromExcel.class.getName());
     

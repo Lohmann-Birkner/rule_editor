@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -37,4 +38,21 @@ public class CriteriumContainer {
     public Map<String, List<Criterium>> getCriterien() {
         return criterien;
     }
+    
+    @Override
+    public String toString(){
+    StringBuffer buffer = new StringBuffer();
+    Set<String> groups = criterien.keySet();
+       for(String group: groups){
+           buffer.append("Group: ").append(group);
+           List<Criterium> list = criterien.get(group);
+           for(Criterium crit: list){
+               buffer.append("\r\n\t").append(crit.toString());
+               
+           }
+           buffer.append("\r\n");
+       }
+       return buffer.toString();
+    }
+    
 }
